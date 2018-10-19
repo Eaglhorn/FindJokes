@@ -1,0 +1,28 @@
+<div class="conteiner">
+  <div class="input-block">
+  <input
+    class="form-control"
+    type="text"
+    [(ngModel)]="title"
+    placeholder="Type your text"
+    (keyup.enter)="searchJokes(title)"
+  >
+<button
+  class="btn btn-success"
+  (click)="searchJokes(title)"
+>
+  Try new joke
+</button>
+  </div>
+    <div class="list-group" *ngIf="result">
+  <p>Total Jokes: {{total}}</p>
+<!--<thead>
+  <th>Image</th>
+  <th>Joke</th>
+</thead>-->
+  <ul *ngFor="let joke of result">
+  <img [src]="joke.icon_url">
+  <li class="list-group-item list-group-item-success"><< {{joke.value}} >></li>
+  </ul>
+</div>
+</div>
